@@ -1,0 +1,412 @@
+/* ============================================
+   FounderStory.css - Professional Heritage
+   ============================================ */
+
+:root {
+  --beige-50: #FAF7F2;
+  --beige-100: #F5F0E8;
+  --beige-200: #EBE3D5;
+  --beige-300: #D4C8B3;
+  --beige-400: #B8A88E;
+  --olive-50: #F4F7F0;
+  --olive-100: #E8EFE0;
+  --olive-200: #C5D6B5;
+  --olive-300: #9DB882;
+  --olive-400: #7A9B5A;
+  --olive-500: #5C7A3E;
+  --olive-600: #4A6330;
+  --olive-700: #3A4F25;
+  --gold-200: #F5E6CC;
+  --gold-300: #D4AF6E;
+  --gold-400: #B8944B;
+  --gold-500: #9A7A3A;
+  --text-primary: #2D2618;
+  --text-secondary: #5C5445;
+  --text-muted: #8B8372;
+  --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', 'SF Pro Display', system-ui, sans-serif;
+  --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Section */
+.founder {
+  position: relative;
+  padding: 120px 0;
+  background: linear-gradient(180deg, var(--beige-50), var(--beige-100), var(--beige-50));
+  overflow: hidden;
+}
+
+.fd-ambient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fd-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  transition: transform 0.5s var(--ease-expo);
+}
+
+.fd-orb-1 {
+  width: 400px; height: 400px;
+  background: rgba(154,184,130,0.08);
+  top: -5%; right: -5%;
+}
+
+.fd-orb-2 {
+  width: 350px; height: 350px;
+  background: rgba(212,175,110,0.05);
+  bottom: -5%; left: -5%;
+}
+
+.fd-pattern {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.02;
+  transition: transform 0.3s ease-out;
+}
+
+/* Container */
+.founder-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Header */
+.fd-header {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s var(--ease-expo);
+}
+
+.fd-header.visible { opacity: 1; transform: translateY(0); }
+
+.fd-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  background: rgba(154,184,130,0.06);
+  border: 1px solid rgba(154,184,130,0.1);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--olive-600);
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+
+.fd-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.fd-title-emphasis {
+  color: var(--olive-600);
+  font-style: italic;
+  position: relative;
+}
+
+.fd-title-emphasis::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--olive-300), var(--gold-300));
+  border-radius: 2px;
+}
+
+.fd-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Layout */
+.fd-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 60px;
+  align-items: start;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s var(--ease-expo) 0.3s;
+}
+
+.fd-layout.visible { opacity: 1; transform: translateY(0); }
+
+/* ============================================
+   Founder Card
+   ============================================ */
+.fd-card {
+  position: sticky;
+  top: 80px;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.7);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(45,38,24,0.06);
+}
+
+.fd-card-image {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.fd-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-expo);
+}
+
+.fd-card:hover .fd-card-image img {
+  transform: scale(1.03);
+}
+
+.fd-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(45,38,24,0.5) 100%);
+}
+
+.fd-card-quote {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: white;
+}
+
+.fd-card-quote svg {
+  opacity: 0.6;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fd-card-quote p {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.4;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.fd-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+}
+
+.fd-card-avatar {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--olive-100);
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--olive-600);
+  flex-shrink: 0;
+}
+
+.fd-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+}
+
+.fd-card-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.fd-card-role {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.fd-card-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  background: rgba(154,184,130,0.1);
+  border-radius: 6px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--olive-600);
+  white-space: nowrap;
+}
+
+/* ============================================
+   Story Content
+   ============================================ */
+.fd-story {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.fd-story-block {
+  display: flex;
+  gap: 18px;
+}
+
+.fd-story-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(154,184,130,0.06);
+  border-radius: 12px;
+  color: var(--olive-600);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fd-story-content {
+  flex: 1;
+}
+
+.fd-story-heading {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.fd-story-text {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* Legacy */
+.fd-legacy {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding: 24px;
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(184,168,142,0.1);
+  border-radius: 18px;
+}
+
+.fd-legacy-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fd-legacy-icon {
+  color: var(--olive-500);
+  flex-shrink: 0;
+}
+
+.fd-legacy-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.fd-legacy-value {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.fd-legacy-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.fd-legacy-sub {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+/* CTA */
+.fd-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--olive-600), var(--olive-500));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s var(--ease-expo);
+  box-shadow: 0 4px 18px rgba(74,99,48,0.2);
+  width: fit-content;
+}
+
+.fd-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(74,99,48,0.3);
+}
+
+.fd-cta svg {
+  transition: transform 0.3s;
+}
+
+.fd-cta:hover svg {
+  transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .founder { padding: 90px 0; }
+  .founder-container { padding: 0 24px; }
+  .fd-layout { grid-template-columns: 1fr; gap: 40px; }
+  .fd-card { position: static; max-width: 400px; margin: 0 auto; }
+  .fd-card-image { aspect-ratio: 4/3; }
+}
+
+@media (max-width: 640px) {
+  .founder { padding: 60px 0; }
+  .founder-container { padding: 0 16px; }
+  .fd-title { font-size: 2rem; }
+  .fd-layout { gap: 28px; }
+  .fd-legacy { grid-template-columns: 1fr; gap: 12px; }
+  .fd-story-block { gap: 12px; }
+  .fd-story-icon { width: 36px; height: 36px; }
+  .fd-cta { width: 100%; justify-content: center; }
+}
