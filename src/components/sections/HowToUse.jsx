@@ -11,7 +11,12 @@ import {
   Pause,
   ChevronRight
 } from 'lucide-react'
-import './HowToUse.css'
+import './HowToUse.css' 
+import apply from "../../assets/apply.png";
+import wait from "../../assets/wait.png";
+import wash from "../../assets/wash.png";
+
+
 
 // ============================================
 // REPLACE THESE WITH YOUR ACTUAL IMAGE URLS
@@ -21,9 +26,9 @@ const IMAGES = {
   bgPattern: '',
   
   // Step images - replace with your actual images
-  step1: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80',
-  step2: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80',
-  step3: 'https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=800&q=80',
+  step1: apply,
+  step2: wait,
+  step3: wash,
 }
 
 const HowToUse = () => {

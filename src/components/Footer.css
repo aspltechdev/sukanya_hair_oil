@@ -595,3 +595,137 @@
     transform: none;
   }
 }
+
+
+/* ============================================
+   Social Media & Additional Styles
+   Add these to your existing Footer.css
+   ============================================ */
+
+/* Social Media Section */
+.footer-social {
+  margin-bottom: 18px;
+}
+
+.footer-social-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.3s var(--ease-expo);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-social-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--social-color);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.footer-social-icon:hover {
+  transform: translateY(-3px);
+  border-color: var(--social-color);
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer-social-icon:hover::before {
+  opacity: 0.85;
+}
+
+.footer-social-icon svg {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s;
+}
+
+.footer-social-icon:hover svg {
+  transform: scale(1.1);
+}
+
+/* Business Hours */
+.footer-hours {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-hours svg {
+  opacity: 0.6;
+}
+
+/* Payment Methods */
+.footer-payment {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-payment-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-payment-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.payment-icon {
+  font-size: 1.2rem;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.payment-icon:hover {
+  opacity: 1;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 640px) {
+  .footer-social-icons {
+    justify-content: flex-start;
+  }
+  
+  .footer-social-icon {
+    width: 36px;
+    height: 36px;
+  }
+}

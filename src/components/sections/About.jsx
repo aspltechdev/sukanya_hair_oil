@@ -2,13 +2,14 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Leaf, Heart, Users, Clock, Sparkles, Flower2 } from 'lucide-react'
 import './About.css'
+import abtimg from "../../assets/abtimg.png";
 
 // ============================================
 // REPLACE THESE WITH YOUR ACTUAL IMAGE URLS
 // ============================================
 const IMAGES = {
   // Heritage/tradition image - Ayurvedic herbs, family making oil, etc.
-  aboutImage: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80',
+  aboutImage: abtimg,
   
   // Decorative elements
   leafPattern: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=200&q=60',

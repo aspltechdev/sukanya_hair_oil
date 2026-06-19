@@ -14,12 +14,13 @@ import {
   Pause
 } from 'lucide-react'
 import './FounderStory.css'
+import founder from "../../assets/founder.png";
 
 // ============================================
 // REPLACE THESE WITH YOUR ACTUAL IMAGE URLS
 // ============================================
 const IMAGES = {
-  founderImage: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=800&q=80',
+  founderImage: founder,
   bgTexture: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1920&q=80',
 }
 

@@ -26,6 +26,7 @@ import Testimonials from '../components/sections/Testimonials'
 import FounderStory from '../components/sections/FounderStory'
 import FAQ from '../components/sections/FAQ'
 import CallToAction from '../components/sections/CallToAction'
+import Contact from '../components/sections/Contact'
 
 const Home = () => {
   // Smooth scroll for anchor links
@@ -33,17 +34,17 @@ const Home = () => {
     const handleAnchorClick = (e) => {
       const target = e.target.closest('a[href^="#"]')
       if (!target) return
-      
+
       const href = target.getAttribute('href')
       if (href === '#') return
-      
+
       const element = document.querySelector(href)
       if (element) {
         e.preventDefault()
         const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 80
         const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
         const offsetPosition = elementPosition - navbarHeight
-        
+
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
@@ -73,22 +74,23 @@ const Home = () => {
       <main className="home-page">
 
         <Hero />
-        
-    
-         <About />
-         
-        <ProductShowcase/> 
-        <Benefits/> 
-        <WhyChooseUs/>
-        <Ingredients/>
-        <HowToUse/>
-        <Testimonials/>
-<FounderStory/>
-<FAQ/>
-<CallToAction/>
 
 
-       {/* <ProductShowcase />
+        <About />
+
+        <ProductShowcase />
+        <Benefits />
+        <WhyChooseUs />
+        <Ingredients />
+        <HowToUse />
+        <Testimonials />
+        <FounderStory />
+        <FAQ />
+        <CallToAction />
+        <Contact />
+
+
+        {/* <ProductShowcase />
        
         
     

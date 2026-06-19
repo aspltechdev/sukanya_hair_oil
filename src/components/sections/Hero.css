@@ -1,6 +1,6 @@
 /* ============================================
-   Hero.css - Ultra Premium Cinematic Design
-   with 360° Product Rotation
+   Hero.css - Complete Cinematic Hero Section
+   with 3D Rotating Product
    ============================================ */
 
 /* CSS Variables */
@@ -28,6 +28,7 @@
   --gold-500: #9A7A3A;
   
   --cream: #FEFCF8;
+  --warm-white: #FDFBF7;
   
   --text-primary: #2D2618;
   --text-secondary: #5C5445;
@@ -40,8 +41,7 @@
   --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
   --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
-  --shadow-glow: 0 0 60px rgba(184, 148, 75, 0.4);
-  --shadow-olive: 0 0 60px rgba(74, 99, 48, 0.3);
+  --shadow-glow: 0 0 40px rgba(184, 148, 75, 0.3);
   
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
   --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -77,22 +77,22 @@ body {
 }
 
 /* ============================================
-   Background Image
+   Background Image with Parallax
    ============================================ */
 .hero-bg-wrapper {
   position: absolute;
-  inset: 0;
+  inset: -10%;
   z-index: 0;
 }
 
 .hero-bg-image {
   position: absolute;
-  inset: -10%;
+  inset: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   will-change: transform;
-  transition: transform 0.3s var(--ease-out-expo);
+  transition: transform 0.3s ease-out;
 }
 
 .hero-bg-overlay {
@@ -430,6 +430,23 @@ body {
   transform: translateY(-1px);
 }
 
+.btn-text {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+.btn-primary:hover .btn-icon {
+  transform: translateX(4px);
+}
+
 .btn-shine-effect {
   position: absolute;
   top: 0;
@@ -443,6 +460,7 @@ body {
     transparent
   );
   transition: left 0.7s;
+  z-index: 0;
 }
 
 .btn-primary:hover .btn-shine-effect {
@@ -473,16 +491,6 @@ body {
     transform: translate(-50%, -50%) scale(1);
     opacity: 0;
   }
-}
-
-.btn-icon {
-  display: flex;
-  align-items: center;
-  transition: transform 0.3s var(--ease-out-expo);
-}
-
-.btn-primary:hover .btn-icon {
-  transform: translateX(4px);
 }
 
 /* Secondary Button */
@@ -693,188 +701,264 @@ body {
 }
 
 /* ============================================
-   360° Product Card
+   3D Product Stage
    ============================================ */
-.product-card-3d {
-  position: relative;
-  width: 320px;
-  height: 440px;
-  transform-style: preserve-3d;
-  transition: transform 0.1s ease-out;
-  cursor: grab;
+.product-3d-stage {
+  perspective: 1200px;
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
   z-index: 5;
 }
 
-.product-card-3d:active {
+.product-3d-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+  cursor: grab;
+}
+
+.product-3d-container:active {
   cursor: grabbing;
 }
 
-.card-face {
+/* ============================================
+   Individual Faces
+   ============================================ */
+.product-face {
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
-  border-radius: 32px;
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: 
-    0 25px 80px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    0 30px 80px rgba(45, 38, 24, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.15);
 }
 
-.card-front {
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.5),
-    rgba(245, 240, 232, 0.6),
-    rgba(235, 227, 213, 0.5)
-  );
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
+/* Full Image Fill */
+.product-face-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
 }
 
-.card-back {
+/* Gradient Overlays */
+.product-face-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background: linear-gradient(
-    145deg,
-    rgba(245, 240, 232, 0.7),
-    rgba(235, 227, 213, 0.8)
+    180deg,
+    rgba(45, 38, 24, 0.1) 0%,
+    rgba(45, 38, 24, 0.05) 40%,
+    rgba(45, 38, 24, 0.5) 80%,
+    rgba(45, 38, 24, 0.75) 100%
   );
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
+}
+
+.product-face-gradient-dark {
+  background: linear-gradient(
+    135deg,
+    rgba(45, 38, 24, 0.6) 0%,
+    rgba(45, 38, 24, 0.3) 50%,
+    rgba(45, 38, 24, 0.6) 100%
+  );
+}
+
+/* Content Overlay */
+.product-face-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+/* ============================================
+   Front Face
+   ============================================ */
+.face-content-top {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.face-badge {
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.face-content-bottom {
+  text-align: center;
+}
+
+.face-brand {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.face-name {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-top: 4px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.face-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--gold-300);
+  margin: 10px auto;
+  border-radius: 1px;
+}
+
+.face-tagline {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+/* Shine Effect */
+.face-shine {
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 60%;
+  height: 160%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.12) 45%,
+    rgba(255, 255, 255, 0.06) 50%,
+    transparent 55%
+  );
+  z-index: 3;
+  pointer-events: none;
+  animation: shineMove 6s ease-in-out infinite;
+}
+
+@keyframes shineMove {
+  0%, 100% { transform: translateX(-100%) translateY(-100%); }
+  50% { transform: translateX(200%) translateY(100%); }
+}
+
+/* ============================================
+   Back Face
+   ============================================ */
+.product-face-back {
   transform: rotateY(180deg);
 }
 
-.card-content {
-  position: relative;
-  height: 100%;
+.face-content-center {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px;
-}
-
-.card-reflection {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    135deg,
-    transparent 40%,
-    rgba(255, 255, 255, 0.3) 50%,
-    transparent 60%
-  );
-  pointer-events: none;
-  animation: reflectionMove 8s ease-in-out infinite;
-}
-
-@keyframes reflectionMove {
-  0%, 100% { transform: translate(-30%, -30%) rotate(0deg); }
-  50% { transform: translate(30%, 30%) rotate(10deg); }
-}
-
-/* Product Image Container */
-.product-image-container {
-  position: relative;
-  margin-bottom: 24px;
-}
-
-.product-image {
-  width: 180px;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
-  transition: transform 0.3s var(--ease-out-expo);
-}
-
-.product-card-3d:hover .product-image {
-  transform: scale(1.05);
-}
-
-.product-glow {
-  position: absolute;
-  inset: -20%;
-  background: radial-gradient(
-    circle,
-    rgba(212, 175, 110, 0.2),
-    transparent 60%
-  );
-  pointer-events: none;
-  animation: glowPulse 3s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.1); }
-}
-
-.card-label {
   text-align: center;
+  height: 100%;
+  gap: 8px;
 }
 
-.label-brand {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--olive-700);
-  letter-spacing: 0.05em;
-  line-height: 1;
-}
-
-.label-name {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-top: 4px;
-}
-
-/* Card Back Content */
-.back-content {
-  text-align: center;
-  color: var(--text-primary);
-}
-
-.back-icon {
+.face-back-icon {
   width: 64px;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 16px;
-  background: rgba(154, 184, 130, 0.15);
-  border-radius: 20px;
-  color: var(--olive-600);
-}
-
-.back-content h3 {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  color: white;
   margin-bottom: 8px;
-  color: var(--olive-700);
 }
 
-.back-content p {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 16px;
+.face-back-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-.back-seal {
-  display: inline-block;
-  padding: 6px 16px;
-  background: rgba(154, 184, 130, 0.1);
-  border: 1px solid rgba(154, 184, 130, 0.2);
-  border-radius: 100px;
-  font-size: 0.8rem;
+.face-back-desc {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.4;
+}
+
+.face-back-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.face-back-badges span {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
-  color: var(--olive-600);
+}
+
+/* ============================================
+   Side Faces (Right & Left)
+   ============================================ */
+.product-face-right {
+  transform: rotateY(90deg) translateZ(150px);
+  width: 300px;
+}
+
+.product-face-left {
+  transform: rotateY(-90deg) translateZ(150px);
+  width: 300px;
+}
+
+.face-side-icon {
+  color: white;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.product-face-right h4,
+.product-face-left h4 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.product-face-right p,
+.product-face-left p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ============================================
@@ -930,7 +1014,7 @@ body {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  margin-top: 28px;
+  margin-top: 68px;
 }
 
 .pill {
@@ -1092,17 +1176,48 @@ body {
     justify-content: center;
   }
 
-  .product-card-3d {
+  .orbital-ring {
+    display: none;
+  }
+
+  .product-3d-stage {
     width: 260px;
     height: 360px;
   }
 
-  .product-image {
-    width: 150px;
+  .product-face-right,
+  .product-face-left {
+    transform: rotateY(90deg) translateZ(130px);
+    width: 260px;
   }
 
-  .orbital-ring {
-    display: none;
+  .product-face-left {
+    transform: rotateY(-90deg) translateZ(130px);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-3d-stage {
+    width: 240px;
+    height: 330px;
+  }
+
+  .product-face-right,
+  .product-face-left {
+    transform: rotateY(90deg) translateZ(120px);
+    width: 240px;
+  }
+
+  .product-face-left {
+    transform: rotateY(-90deg) translateZ(120px);
+  }
+
+  .face-brand {
+    font-size: 1.5rem;
+  }
+
+  .face-back-title {
+    font-size: 1.2rem;
   }
 }
 
@@ -1140,13 +1255,58 @@ body {
     height: 1px;
   }
 
-  .product-card-3d {
-    width: 220px;
-    height: 300px;
+  .product-3d-stage {
+    width: 200px;
+    height: 280px;
   }
 
-  .product-image {
-    width: 120px;
+  .product-face-right,
+  .product-face-left {
+    transform: rotateY(90deg) translateZ(100px);
+    width: 200px;
+  }
+
+  .product-face-left {
+    transform: rotateY(-90deg) translateZ(100px);
+  }
+
+  .face-brand {
+    font-size: 1.3rem;
+  }
+
+  .face-content-bottom {
+    padding-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-3d-stage {
+    width: 180px;
+    height: 250px;
+  }
+
+  .product-face-right,
+  .product-face-left {
+    transform: rotateY(90deg) translateZ(90px);
+    width: 180px;
+  }
+
+  .product-face-left {
+    transform: rotateY(-90deg) translateZ(90px);
+  }
+
+  .face-badge {
+    font-size: 0.6rem;
+    padding: 4px 10px;
+  }
+
+  .face-back-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .face-back-title {
+    font-size: 1rem;
   }
 }
 
@@ -1158,11 +1318,17 @@ body {
   .particle,
   .orbital-ring,
   .aura-circle,
-  .product-card-3d {
+  .face-shine,
+  .badge-shine {
     animation: none !important;
   }
-  
-  .product-card-3d {
-    transform: none !important;
+
+  .product-3d-container {
+    transition: none !important;
+  }
+
+  .hero-content,
+  .hero-visual {
+    transition: none !important;
   }
 }

@@ -13,18 +13,21 @@ import {
   Zap
 } from 'lucide-react'
 import './Ingredients.css'
+import herbs from "../../assets/rare.png";
+import oils from "../../assets/oils.png";
+import extracts from "../../assets/extract.png";
 
 // ============================================
 // REPLACE THESE WITH YOUR ACTUAL IMAGE URLS
 // ============================================
 const IMAGES = {
   // Hero image - herbs, natural ingredients, Ayurvedic elements
-  heroImage: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80',
+  heroImage:"",
   
   // Category images
-  herbs: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&q=80',
-  oils: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&q=80',
-  extracts: 'https://images.unsplash.com/photo-1612831455543-fbd5dbca1a3e?w=600&q=80',
+  herbs: herbs,
+  oils: oils,
+  extracts: extracts,
 }
 
 const Ingredients = () => {
@@ -211,7 +214,7 @@ const Ingredients = () => {
                     </div>
 
                     {/* Number */}
-                    <div className="ing-category-number">0{index + 1}</div>
+                    {/* <div className="ing-category-number">0{index + 1}</div> */}
                   </div>
 
                   {/* Content */}

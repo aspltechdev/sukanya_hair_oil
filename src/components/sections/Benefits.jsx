@@ -13,7 +13,10 @@ import {
   CheckCircle2
 } from 'lucide-react'
 import './Benefits.css'
-
+import feature1 from "../../assets/root.png";
+import feature2 from "../../assets/strenght.png";
+import feature3 from "../../assets/hair.png";
+import feature4 from "../../assets/shine.png";
 // ============================================
 // REPLACE THESE WITH YOUR ACTUAL IMAGE URLS
 // ============================================
@@ -22,10 +25,10 @@ const IMAGES = {
   bgTexture: 'https://images.unsplash.com/photo-1612831455543-fbd5dbca1a3e?w=1920&q=80',
   
   // Feature images
-  feature1: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&q=80',
-  feature2: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&q=80',
-  feature3: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80',
-  feature4: 'https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=600&q=80',
+  feature1: feature1,
+  feature2: feature2,
+  feature3: feature3,
+  feature4: feature4,
 }
 
 const Benefits = () => {
@@ -184,7 +187,7 @@ const Benefits = () => {
             <div className="bn-header-top">
               <div className="bn-badge">
                 <Zap size={12} className="bn-badge-icon" />
-                <span>Why Choose Sukanya</span>
+                <span>Benefits of Sukanya</span>
               </div>
             </div>
 

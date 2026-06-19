@@ -32,7 +32,7 @@
 /* Section */
 .ingredients {
   position: relative;
-  padding: 140px 0;
+  padding: 60px 0;
   background: linear-gradient(180deg, var(--beige-50) 0%, var(--beige-100) 50%, var(--beige-50) 100%);
   overflow: hidden;
 }

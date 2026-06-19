@@ -31,7 +31,7 @@
 /* Section */
 .founder {
   position: relative;
-  padding: 120px 0;
+  padding: 60px 0;
   background: linear-gradient(180deg, var(--beige-50), var(--beige-100), var(--beige-50));
   overflow: hidden;
 }
