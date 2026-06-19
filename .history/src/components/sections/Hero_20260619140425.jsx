@@ -928,7 +928,7 @@ const Hero = () => {
         </div>
 
         {/* Particle Effects */}
-        <div className="particles-container">
+        {/* <div className="particles-container">
           {[...Array(20)].map((_, i) => (
             <div 
               key={i}
@@ -942,7 +942,7 @@ const Hero = () => {
               }}
             />
           ))}
-        </div>
+        </div> */}
 
         {/* Main Content Container */}
         <div className="hero-container">

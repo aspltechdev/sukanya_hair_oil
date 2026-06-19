@@ -146,12 +146,13 @@ const About = () => {
               <div className="about-description-wrapper">
                 <p className="about-description">
                   Sukanya Hair Oil is rooted in a rich family tradition passed down 
-                  through generations. What began as a cherished homemade remedy, crafted with organic ingredients, has grown into a trusted brand 
-                  without compromising the authenticity, purity, and love that goes into every bottle.
+                  through generations. What began as a cherished homemade remedy has 
+                  grown into a trusted brand, without compromising on the authenticity 
+                  and love that goes into every bottle.
                 </p>
                 <p className="about-description about-description-secondary">
-                  Each drop carries the wisdom of ancient Ayurveda, blended with nature's 
-                  finest organic ingredients to give your hair the care it truly deserves.
+                  Each drop carries the wisdom of ancient Ayurveda, blended with 
+                  nature's finest ingredients to give your hair the care it truly deserves.
                 </p>
               </div>
 

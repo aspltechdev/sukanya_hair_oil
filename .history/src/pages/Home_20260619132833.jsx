@@ -88,7 +88,6 @@ const Home = () => {
         <FounderStory />
         <FAQ />
         <CallToAction />
-        <SocialWall />
         <Contact />
 
 

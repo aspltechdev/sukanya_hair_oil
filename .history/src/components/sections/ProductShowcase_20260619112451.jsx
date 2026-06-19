@@ -357,7 +357,7 @@ import {
   Droplets
 } from 'lucide-react'
 import './ProductShowcase.css'
-import product1 from "../../assets/pro2a.png"
+import product1 from "../../assets/pro2.png"
 import product3 from "../../assets/pro3.png"
 import product4 from "../../assets/pro4.png"
 
@@ -602,8 +602,8 @@ const ProductShowcase = () => {
                 </div>
                 <p className="ps-description">
                   Sukanya Hair Oil is crafted with care using a time-tested family recipe. 
-                  Each bottle contains the essence of nature's finest organic ingredients, 
-                  prepared with the same love and dedication passed down through generations.
+                  Each bottle contains the essence of nature's finest ingredients, prepared 
+                  with the same love and dedication passed down through generations.
                 </p>
                 <div className="ps-desc-decoration">
                   <span className="decoration-dot" />

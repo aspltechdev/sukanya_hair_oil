@@ -794,7 +794,7 @@ import { Helmet } from 'react-helmet-async'
 import { ArrowRight, Sparkles, Leaf, Shield, Star, Play, Pause } from 'lucide-react'
 import './Hero.css'
 import herobg from "../../assets/herobg.png"
-import heroimg from "../../assets/bottle.png"
+import heroimg from "../../assets/oil.png"
 
 const IMAGES = {
   bgImage: herobg,
@@ -966,8 +966,9 @@ const Hero = () => {
               </h1>
 
               <p className="hero-description stagger-3">
-                A symphony of rare organic Ayurvedic herbs, cold-pressed oils, and ancient 
-                wisdom — crafted to transform your hair into its most radiant, vibrant form.
+                A symphony of rare Ayurvedic herbs, cold-pressed oils, 
+                and ancient wisdom — crafted to transform your hair 
+                into its most radiant, vibrant form.
               </p>
 
               <div className="hero-actions stagger-4">

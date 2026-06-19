@@ -602,8 +602,8 @@ const ProductShowcase = () => {
                 </div>
                 <p className="ps-description">
                   Sukanya Hair Oil is crafted with care using a time-tested family recipe. 
-                  Each bottle contains the essence of nature's finest organic ingredients, 
-                  prepared with the same love and dedication passed down through generations.
+                  Each bottle contains the essence of nature's finest ingredients, prepared 
+                  with the same love and dedication passed down through generations.
                 </p>
                 <div className="ps-desc-decoration">
                   <span className="decoration-dot" />

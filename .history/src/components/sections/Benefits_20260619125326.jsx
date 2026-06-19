@@ -204,9 +204,7 @@ const Benefits = () => {
             </div>
 
             <p className="bn-description">
-              Every drop is a testament to nature's power. Our formula combines 
-              50+ organic herbs in a precise, time-tested 
-              blend that delivers exceptional nourishment and care for healthier, stronger hair.
+              Every drop is a testament to nature's power. Our formula combines 50+ organic herbs in a precise, time-tested blend that delivers exceptional nourishment and care for healthier, stronger hair.
               <span className="bn-description-highlight"> visible results </span> 
               you can see and feel.
             </p>

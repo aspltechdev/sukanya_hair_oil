@@ -154,8 +154,7 @@ const Ingredients = () => {
             </div>
 
             <p className="ing-description">
-             Our secret family formula combines rare organic Ayurvedic herbs, cold-pressed oils, 
-             and natural extracts — each carefully chosen for its unique benefits. 
+             Our secret family formula combines rare organic Ayurvedic herbs, cold-pressed oils, and natural extracts — each carefully chosen for its unique benefits. 
              The exact recipe remains our treasured secret, passed down through three generations.
             </p>
           </div>

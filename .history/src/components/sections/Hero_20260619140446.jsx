@@ -915,7 +915,7 @@ const Hero = () => {
         </div>
 
         {/* Animated Ambient Elements */}
-        <div className="hero-ambient">
+        {/* <div className="hero-ambient">
           <div className="ambient-orb ambient-orb-1" style={{
             transform: `translate(${mousePosition.x * 40}px, ${mousePosition.y * 40}px)`
           }} />
@@ -925,7 +925,7 @@ const Hero = () => {
           <div className="ambient-orb ambient-orb-3" style={{
             transform: `translate(${mousePosition.x * 20}px, ${-mousePosition.y * 20}px)`
           }} />
-        </div>
+        </div> */}
 
         {/* Particle Effects */}
         <div className="particles-container">

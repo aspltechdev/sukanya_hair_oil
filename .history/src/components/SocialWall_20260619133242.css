@@ -1,0 +1,597 @@
+/* ============================================
+   Main Section
+   ============================================ */
+.sw-section {
+  position: relative;
+  padding: 190px 0 80px;
+  background-color: #f5f1e8;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.sw-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 40%, rgba(74,93,46,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(143,127,90,0.06) 0%, transparent 50%),
+    linear-gradient(rgba(245, 241, 232, 0.6), rgba(245, 241, 232, 0.6));
+  pointer-events: none;
+  z-index: 1;
+}
+.sw-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(74, 93, 46, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 93, 46, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sw-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ============================================
+   Ambient Glows
+   ============================================ */
+.sw-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+  animation: swGlowPulse 7s ease-in-out infinite;
+}
+
+@keyframes swGlowPulse {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.1); }
+}
+
+.sw-glow-left {
+  top: -60px;
+  left: -80px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(74,93,46,0.18), transparent 60%);
+}
+
+.sw-glow-right {
+  bottom: -60px;
+  right: -80px;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(143,127,90,0.15), transparent 60%);
+  animation-delay: -3.5s;
+}
+
+/* Centre top gold bloom */
+.sw-glow-center {
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(74,93,46,0.12), transparent 65%);
+  animation-delay: -1.8s;
+}
+
+/* ============================================
+   Light Rays
+   ============================================ */
+.sw-rays {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sw-ray {
+  position: absolute;
+  top: -50%;
+  width: 80px;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(74,93,46,0.12), transparent);
+  transform: rotate(35deg);
+  animation: swRayMove 12s linear infinite;
+}
+
+.sw-ray:nth-child(1) { left: 10%; animation-delay: 0s;  width: 140px; }
+.sw-ray:nth-child(2) { left: 45%; animation-delay: -4s; width: 100px; }
+.sw-ray:nth-child(3) { left: 78%; animation-delay: -8s; width: 120px; }
+
+@keyframes swRayMove {
+  0% { transform: rotate(35deg) translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: rotate(35deg) translateY(100%); opacity: 0; }
+}
+
+/* ============================================
+   Floating Music Notes
+   ============================================ */
+.sw-notes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.sw-note {
+  position: absolute;
+  bottom: -60px;
+  color: #6b7d4a;
+  opacity: 0;
+  animation: swNoteFloat linear infinite;
+  user-select: none;
+}
+
+@keyframes swNoteFloat {
+  0% {
+    transform: translateY(0) rotate(-10deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-45vh) rotate(12deg);
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(-95vh) rotate(-8deg);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   Container
+   ============================================ */
+.sw-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* ============================================
+   Header
+   ============================================ */
+.sw-header {
+  position: relative;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+.sw-header-music-bg {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+  aspect-ratio: 800 / 250;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.95;
+  animation: swHeaderMusicFloat 14s ease-in-out infinite;
+}
+
+.sw-header-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes swHeaderMusicFloat {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0) rotate(0deg); }
+  50% { transform: translate(-50%, -50%) translateY(-6px) rotate(0.4deg); }
+}
+
+
+.sw-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(74, 93, 46, 0.07);
+  border: 1px solid rgba(74, 93, 46, 0.18);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.sw-badge-dot {
+  width: 5px;
+  height: 5px;
+  background: #4a5d2e;
+  border-radius: 50%;
+  animation: swBadgePulse 1.8s ease-in-out infinite;
+}
+
+@keyframes swBadgePulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+.sw-badge-text {
+  font-size: 0.65rem;
+  letter-spacing: 2.5px;
+  color: #3a3a32;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   Title
+   ============================================ */
+.sw-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  margin: 0 0 0.4rem;
+  line-height: 1.15;
+}
+
+.sw-title-light {
+  color: #2f3526;
+  font-weight: 500;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.sw-title-gold {
+  background: linear-gradient(135deg, #4a5d2e, #7a9456);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  display: inline-block;
+}
+
+/* Decorative divider */
+.sw-title-decor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0.6rem 0 0.8rem;
+}
+
+.sw-decor-line {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #4a5d2e, transparent);
+}
+
+.sw-decor-diamond {
+  color: #4a5d2e;
+  font-size: 0.6rem;
+  opacity: 0.5;
+}
+
+.sw-subtitle {
+  color: rgba(58, 58, 50, 0.75);
+  font-size: 1.25rem;
+  line-height: 1.75;
+  max-width: 520px;
+  margin: 0 auto 1.4rem;
+}
+
+/* ============================================
+   Tabs — minimal selector style
+   ============================================ */
+.sw-tabs {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(74, 93, 46, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 6px;
+  border-radius: 999px;
+  gap: 6px;
+  box-shadow: 
+    0 10px 30px rgba(74, 93, 46, 0.08), 
+    0 0 20px rgba(74, 93, 46, 0.05);
+}
+
+.sw-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: rgba(58, 58, 50, 0.65);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.5px;
+}
+
+.sw-tab-btn:hover {
+  color: #2f3526;
+  background: rgba(74, 93, 46, 0.08);
+}
+
+.sw-tab-btn svg {
+  transition: transform 0.3s ease;
+  opacity: 0.85;
+}
+
+.sw-tab-btn:hover svg {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.sw-tab-btn.sw-tab-active {
+  background: linear-gradient(135deg, #4a5d2e, #6b7d4a);
+  color: #ffffff;
+  box-shadow: 
+    0 4px 15px rgba(74, 93, 46, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.sw-tab-btn.sw-tab-active svg {
+  opacity: 1;
+}
+
+/* ============================================
+   Marquee — the star of the show
+   ============================================ */
+.sw-marquee {
+  margin-top: 40px;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  height: 735px;
+}
+
+.sw-marquee::before,
+.sw-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.sw-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(245, 241, 232, 0.95), transparent);
+}
+
+.sw-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(245, 241, 232, 0.95), transparent);
+}
+
+/* ============================================
+   Track
+   ============================================ */
+.sw-track {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: max-content;
+  padding: 0 24px 24px;
+  height: 100%;
+  box-sizing: border-box;
+  animation: swScroll 40s linear infinite;
+}
+
+.sw-marquee:hover .sw-track {
+  animation-play-state: paused;
+}
+
+@keyframes swScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ============================================
+   Cards
+   ============================================ */
+.sw-card {
+  width: 360px;
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid rgba(74, 93, 46, 0.12);
+  box-shadow:
+    0 10px 30px rgba(74, 93, 46, 0.07),
+    0 0 0 1px rgba(74, 93, 46, 0.04);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.sw-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 30px 60px rgba(74, 93, 46, 0.12),
+    0 0 0 1px rgba(74, 93, 46, 0.18),
+    0 0 40px rgba(74, 93, 46, 0.06);
+}
+
+.sw-card--wide {
+  width: 480px;
+}
+
+/* Card Top Bar */
+.sw-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(74, 93, 46, 0.1);
+}
+
+.sw-card-top--instagram { color: #4a5d2e; background: rgba(74, 93, 46, 0.04); }
+.sw-card-top--linkedin  { color: #4a5d2e; background: rgba(143, 127, 90, 0.05); }
+.sw-card-top--youtube   { color: #4a5d2e; background: rgba(139, 32, 32, 0.04); }
+.sw-card-top--facebook  { color: #4a5d2e; background: rgba(74, 93, 46, 0.05); }
+
+/* Embed Wrappers */
+.sw-embed-wrapper {
+  width: 100%;
+}
+
+.sw-embed-linkedin {
+  min-height: 668px;
+  background: #f8fafc;
+}
+
+.sw-embed-youtube {
+  min-height: 270px;
+  background: #0d1429;
+}
+
+.sw-embed-facebook {
+  min-height: 500px;
+  background: #f0f2f5;
+}
+
+
+.sw-youtube-frame {
+  width: 100%;
+  height: 270px;
+  border: none;
+  display: block;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.sw-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 60px;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.sw-footer-line {
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(74, 93, 46, 0.4), transparent);
+}
+
+.sw-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 60px;
+  background: linear-gradient(135deg, #4a5d2e, #3a4a24);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 20px rgba(74, 93, 46, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.sw-follow-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(74, 93, 46, 0.45);
+  gap: 14px;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  .sw-section {
+    padding: 80px 0 60px;
+  }
+
+  .sw-card {
+    width: 300px;
+  }
+
+  .sw-card--wide {
+    width: 300px;
+  }
+
+
+  .sw-embed-youtube,
+  .sw-youtube-frame {
+    height: 180px;
+    min-height: 180px;
+  }
+
+  .sw-embed-facebook {
+    min-height: 350px;
+  }
+
+  .sw-marquee::before,
+  .sw-marquee::after {
+    width: 50px;
+  }
+
+  .sw-track {
+    gap: 16px;
+  }
+
+  /* Icon-only tabs on mobile */
+  .sw-tab-text {
+    display: none;
+  }
+
+  .sw-tabs {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .sw-tab-btn {
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .sw-footer-line {
+    max-width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sw-title {
+    font-size: 2rem;
+  }
+
+  .sw-card,
+  .sw-card--wide {
+    width: 270px;
+  }
+}

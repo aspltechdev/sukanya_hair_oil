@@ -966,8 +966,7 @@ const Hero = () => {
               </h1>
 
               <p className="hero-description stagger-3">
-                A symphony of rare organic Ayurvedic herbs, cold-pressed oils, and ancient 
-                wisdom — crafted to transform your hair into its most radiant, vibrant form.
+                A powerful blend of organic Ayurvedic herbs, cold-pressed oils, and time-honored traditions — crafted to nourish your hair and reveal its healthiest, most radiant beauty.
               </p>
 
               <div className="hero-actions stagger-4">

@@ -26,7 +26,7 @@ import Testimonials from '../components/sections/Testimonials'
 import FounderStory from '../components/sections/FounderStory'
 import FAQ from '../components/sections/FAQ'
 import CallToAction from '../components/sections/CallToAction'
-import SocialWall from "../components/SocialWall";
+
 import Contact from '../components/sections/Contact'
 
 const Home = () => {
@@ -88,7 +88,6 @@ const Home = () => {
         <FounderStory />
         <FAQ />
         <CallToAction />
-        <SocialWall />
         <Contact />
 
 
