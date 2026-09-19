@@ -348,11 +348,11 @@ const Footer = () => {
     { label: 'Contact Us', href: '#contact' }
   ]
 
-  const contactInfo = [
-    { icon: Phone, text: '+91 7624920239', href: 'tel:7624920239' },
-    { icon: Mail, text: 'sukanyahairoil@gmail.com, href: 'mailto:sukanyahairoil@gmail.com },
-    { icon: MapPin, text: 'Bangalore , Karnataka, India' }
-  ]
+const contactInfo = [
+  { icon: Phone, text: '+91 7624920239', href: 'tel:7624920239' },
+  { icon: Mail, text: 'sukanyahairoil@gmail.com', href: 'mailto:sukanyahairoil@gmail.com' },
+  { icon: MapPin, text: 'Bangalore, Karnataka, India' },
+]
 
   const socialLinks = [
     { 
