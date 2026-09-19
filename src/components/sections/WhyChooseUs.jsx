@@ -178,8 +178,8 @@ import { Leaf, Heart, TrendingUp, Clock, Sparkles, Star, Shield, ArrowRight } fr
 import './WhyChooseUs.css'
 import natural from "../../assets/natural.png"
 import traditional from "../../assets/traditional.png"
-import results from "../../assets/results.png"
-import love from "../../assets/love.png"
+import results from "../../assets/a123.png"
+import love from "../../assets/l1.png"
 
 
 // ============================================

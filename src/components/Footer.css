@@ -1,5 +1,6 @@
 /* ============================================
    Footer.css - Olive Green Primary, Beige Secondary
+   (with image logo integration)
    ============================================ */
 
 :root {
@@ -109,48 +110,40 @@
 }
 
 /* ============================================
-   Brand Column
+   Brand Column (Image Logo Version)
    ============================================ */
+.footer-brand {
+  margin-bottom: 20px;
+}
+
 .footer-logo {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 20px;
 }
 
-.footer-logo-icon {
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,0.12); /* Light overlay on olive */
-  border: 1px solid rgba(255,255,255,0.15);
+.footer-logo-img {
+  height: 60px; /* adjust based on your logo aspect ratio */
+  width: auto;
+  max-width: 200px; /* prevents overly wide logos */
+  object-fit: contain;
+  display: block;
+  transition: all 0.3s var(--ease-expo);
+  /* Optional: add a subtle drop shadow for visibility on dark bg */
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Optional: If your logo is dark and needs a light backdrop, 
+   you can add a subtle container. Uncomment below if needed. */
+/*
+.footer-logo {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
-  color: var(--gold-300);
+  display: inline-flex;
 }
-
-.footer-logo-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-logo-name {
-  font-family: var(--font-display);
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: white;
-  line-height: 1;
-  letter-spacing: -0.01em;
-}
-
-.footer-logo-sub {
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.6);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-}
+*/
 
 .footer-desc {
   font-size: 0.88rem;
@@ -572,13 +565,9 @@
     border-radius: 12px;
   }
   
-  .footer-logo-icon {
-    width: 44px;
-    height: 44px;
-  }
-  
-  .footer-logo-name {
-    font-size: 1.4rem;
+  .footer-logo-img {
+    height: 48px;
+    max-width: 160px;
   }
 }
 
@@ -596,10 +585,8 @@
   }
 }
 
-
 /* ============================================
    Social Media & Additional Styles
-   Add these to your existing Footer.css
    ============================================ */
 
 /* Social Media Section */
@@ -717,7 +704,7 @@
 }
 
 /* ============================================
-   Responsive
+   Responsive (Social)
    ============================================ */
 @media (max-width: 640px) {
   .footer-social-icons {

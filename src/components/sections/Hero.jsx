@@ -794,7 +794,7 @@ import { Helmet } from 'react-helmet-async'
 import { ArrowRight, Sparkles, Leaf, Shield, Star, Play, Pause } from 'lucide-react'
 import './Hero.css'
 import herobg from "../../assets/herobg.png"
-import heroimg from "../../assets/bottle.png"
+import heroimg from "../../assets/36.png"
 
 const IMAGES = {
   bgImage: herobg,

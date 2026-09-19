@@ -357,7 +357,7 @@ import {
   Droplets
 } from 'lucide-react'
 import './ProductShowcase.css'
-import product1 from "../../assets/pro2a.png"
+import product1 from "../../assets/p234.png"
 import product3 from "../../assets/pro3.png"
 import product4 from "../../assets/pro4.png"
 

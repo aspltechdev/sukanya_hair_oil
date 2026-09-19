@@ -235,7 +235,7 @@ import {
   Leaf
 } from 'lucide-react'
 import './CallToAction.css'
-import ctabg from "../../assets/ctabg.png"
+import ctabg from "../../assets/cta2.png"
 
 const IMAGES = {
   bgImage: ctabg,

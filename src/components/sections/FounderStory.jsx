@@ -14,7 +14,7 @@ import {
   Pause
 } from 'lucide-react'
 import './FounderStory.css'
-import founder from "../../assets/founder.png";
+import founder from "../../assets/f2.png";
 
 // ============================================
 // REPLACE THESE WITH YOUR ACTUAL IMAGE URLS

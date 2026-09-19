@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Leaf, Heart, Users, Clock, Sparkles, Flower2 } from 'lucide-react'
 import './About.css'
-import abtimg from "../../assets/abtimg1.png";
+import abtimg from "../../assets/abt.png";
 
 // ============================================
 // REPLACE THESE WITH YOUR ACTUAL IMAGE URLS
