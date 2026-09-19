@@ -392,7 +392,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Mumbai, Maharashtra, India',
+      value: 'Bangalore, Karnataka, India',
       color: '#5C7A3E'
     }
   ]
