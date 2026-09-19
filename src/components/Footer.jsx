@@ -71,7 +71,7 @@
 
 //   const contactInfo = [
 //     { icon: Phone, text: '+91 7624920239', href: 'tel:7624920239' },
-//     { icon: Mail, text: 'info@sukanyahairoil.com', href: 'mailto:info@sukanyahairoil.com' },
+//     { icon: Mail, text: 'sukanyahairoil@gmail.com, href: 'mailto:sukanyahairoil@gmail.com },
 //     { icon: MapPin, text: 'Mumbai, Maharashtra, India' }
 //   ]
 
@@ -350,8 +350,8 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: Phone, text: '+91 7624920239', href: 'tel:7624920239' },
-    { icon: Mail, text: 'info@sukanyahairoil.com', href: 'mailto:info@sukanyahairoil.com' },
-    { icon: MapPin, text: 'Mumbai, Maharashtra, India' }
+    { icon: Mail, text: 'sukanyahairoil@gmail.com, href: 'mailto:sukanyahairoil@gmail.com },
+    { icon: MapPin, text: 'Bangalore , Karnataka, India' }
   ]
 
   const socialLinks = [
@@ -608,4 +608,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Footer 
