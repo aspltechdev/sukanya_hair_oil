@@ -708,7 +708,7 @@ const Contact = () => {
           <div className={`ct-trust ${isVisible ? 'visible' : ''}`}>
             <div className="ct-trust-item">
               <Shield size={16} />
-              <span>100% Natural</span>
+              <span>100% Organic</span>
             </div>
             <div className="ct-trust-divider" />
             <div className="ct-trust-item">

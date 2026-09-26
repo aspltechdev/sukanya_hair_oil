@@ -1,5 +1,5 @@
 /* ============================================
-   ProductShowcase.css - Image Overlay Design
+   ProductShowcase.css
    ============================================ */
 
 :root {
@@ -9,6 +9,7 @@
   --beige-300: #D4C8B3;
   --beige-400: #B8A88E;
   --beige-500: #9C8B6F;
+
   --olive-50: #F4F7F0;
   --olive-100: #E8EFE0;
   --olive-200: #C5D6B5;
@@ -17,31 +18,49 @@
   --olive-500: #5C7A3E;
   --olive-600: #4A6330;
   --olive-700: #3A4F25;
+
   --gold-100: #FDF8F0;
   --gold-200: #F5E6CC;
   --gold-300: #D4AF6E;
   --gold-400: #B8944B;
   --gold-500: #9A7A3A;
+
   --text-primary: #2D2618;
   --text-secondary: #5C5445;
   --text-muted: #8B8372;
+
   --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
   --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+
 /* ============================================
-   Section Container
+   SECTION
    ============================================ */
+
 .product-showcase {
   position: relative;
-  padding: 60px 0;
-  background: linear-gradient(180deg, var(--beige-50) 0%, var(--beige-100) 50%, var(--beige-50) 100%);
+  padding: 10px 0 60px;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--beige-50) 0%,
+      var(--beige-100) 50%,
+      var(--beige-50) 100%
+    );
+
   overflow: hidden;
 }
 
-/* Background */
+
+/* ============================================
+   BACKGROUND
+   ============================================ */
+
 .ps-bg-ambient {
   position: absolute;
   inset: 0;
@@ -57,750 +76,1620 @@
 }
 
 .ps-orb-1 {
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(154,184,130,0.12), transparent);
-  top: -10%; right: -5%;
+  width: 500px;
+  height: 500px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(154, 184, 130, 0.12),
+      transparent
+    );
+
+  top: -10%;
+  right: -5%;
+
   animation: orbDrift 20s ease-in-out infinite;
 }
 
 .ps-orb-2 {
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(212,175,110,0.1), transparent);
-  bottom: -8%; left: -5%;
+  width: 400px;
+  height: 400px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(212, 175, 110, 0.1),
+      transparent
+    );
+
+  bottom: -8%;
+  left: -5%;
+
   animation: orbDrift 24s ease-in-out infinite reverse;
 }
 
 @keyframes orbDrift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -25px) scale(1.05); }
-  66% { transform: translate(-20px, 20px) scale(0.95); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -25px) scale(1.05);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
 }
 
-/* Floating Elements */
+
+/* ============================================
+   FLOATING ELEMENTS
+   ============================================ */
+
 .ps-floating-elements {
   position: absolute;
   inset: 0;
+
   pointer-events: none;
   z-index: 0;
 }
 
 .ps-float-item {
   position: absolute;
+
   opacity: 0.08;
-  animation: floatGentle 10s ease-in-out infinite;
+
+  animation:
+    floatGentle 10s ease-in-out infinite;
 }
 
-.ps-float-1 { top: 15%; left: 8%; color: var(--olive-400); animation-delay: 0s; }
-.ps-float-2 { top: 25%; right: 10%; color: var(--gold-400); animation-delay: -2s; }
-.ps-float-3 { bottom: 20%; left: 12%; color: var(--olive-300); animation-delay: -4s; }
+.ps-float-1 {
+  top: 15%;
+  left: 8%;
+
+  color: var(--olive-400);
+
+  animation-delay: 0s;
+}
+
+.ps-float-2 {
+  top: 25%;
+  right: 10%;
+
+  color: var(--gold-400);
+
+  animation-delay: -2s;
+}
+
+.ps-float-3 {
+  bottom: 20%;
+  left: 12%;
+
+  color: var(--olive-300);
+
+  animation-delay: -4s;
+}
 
 @keyframes floatGentle {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  33% { transform: translateY(-18px) rotate(6deg); }
-  66% { transform: translateY(8px) rotate(-4deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-18px) rotate(6deg);
+  }
+
+  66% {
+    transform: translateY(8px) rotate(-4deg);
+  }
 }
 
-/* Container */
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+
 .product-showcase-container {
   position: relative;
+
   z-index: 1;
+
   max-width: 1200px;
+
   margin: 0 auto;
+
   padding: 0 40px;
 }
 
+
 /* ============================================
-   Header
+   HEADER
    ============================================ */
+
 .ps-header {
   text-align: center;
+
   margin-bottom: 70px;
+
   opacity: 0;
+
   transform: translateY(40px);
-  transition: all 1.2s var(--ease-out-expo);
+
+  transition:
+    all 1.2s var(--ease-out-expo);
 }
 
-.ps-header.visible { opacity: 1; transform: translateY(0); }
+.ps-header.visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
 
 .ps-badge {
   display: inline-flex;
+
   align-items: center;
+
   gap: 10px;
+
   padding: 10px 24px;
-  background: rgba(255,255,255,0.6);
+
+  background:
+    rgba(255, 255, 255, 0.6);
+
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(184,168,142,0.2);
+
+  border:
+    1px solid
+    rgba(184, 168, 142, 0.2);
+
   border-radius: 100px;
+
   margin-bottom: 24px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+
+  box-shadow:
+    0 2px 12px
+    rgba(0, 0, 0, 0.03);
 }
 
 .badge-pulse-dot {
-  width: 8px; height: 8px;
+  width: 8px;
+  height: 8px;
+
   background: var(--olive-500);
+
   border-radius: 50%;
-  animation: dotPulse 2s ease-in-out infinite;
+
+  animation:
+    dotPulse 2s ease-in-out infinite;
 }
 
 @keyframes dotPulse {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.3); }
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
 }
 
 .ps-badge span {
   font-size: 0.8rem;
+
   font-weight: 500;
+
   color: var(--text-secondary);
+
   letter-spacing: 0.08em;
+
   text-transform: uppercase;
 }
 
 .badge-icon-sparkle {
   color: var(--gold-400);
-  animation: sparkle 3s ease-in-out infinite;
+
+  animation:
+    sparkle 3s ease-in-out infinite;
 }
 
 @keyframes sparkle {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 .ps-title {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+
+  font-size:
+    clamp(2.8rem, 5.5vw, 4.2rem);
+
   font-weight: 400;
+
   line-height: 1.1;
+
   letter-spacing: -0.02em;
+
   color: var(--text-primary);
+
   margin-bottom: 16px;
 }
 
-.ps-title-lines { display: block; }
+.ps-title-lines {
+  display: block;
+}
 
 .ps-title-accents {
   color: var(--olive-600);
+
   font-style: italic;
+
   position: relative;
 }
 
 .ps-title-accents::after {
   content: '';
+
   position: absolute;
-  bottom: 4px; left: 30%;
-  width: 30%; height: 3px;
-  background: linear-gradient(90deg, var(--olive-300), var(--gold-300));
+
+  bottom: 4px;
+  left: 30%;
+
+  width: 30%;
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--olive-300),
+      var(--gold-300)
+    );
+
   border-radius: 2px;
 }
 
 .ps-ornament {
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   gap: 14px;
 }
 
-.ps-ornament-line { width: 50px; height: 1px; background: var(--beige-400); }
-.ps-ornament-icon { color: var(--olive-500); opacity: 0.6; }
+.ps-ornament-line {
+  width: 50px;
+  height: 1px;
 
-/* ============================================
-   Main Grid
-   ============================================ */
-.ps-main-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1.4s var(--ease-out-expo) 0.3s;
+  background: var(--beige-400);
 }
 
-.ps-main-grid.visible { opacity: 1; transform: translateY(0); }
+.ps-ornament-icon {
+  color: var(--olive-500);
+
+  opacity: 0.6;
+}
+
 
 /* ============================================
-   Visual Column - Image Overlay Card
+   MAIN GRID
    ============================================ */
+
+.ps-main-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 80px;
+
+  align-items: center;
+
+  opacity: 0;
+
+  transform: translateY(50px);
+
+  transition:
+    all 1.4s
+    var(--ease-out-expo)
+    0.3s;
+}
+
+.ps-main-grid.visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* ============================================
+   VISUAL COLUMN
+   ============================================ */
+
 .ps-visual-column {
   display: flex;
+
   justify-content: center;
   align-items: center;
 }
 
 .ps-product-wrapper {
   position: relative;
+
   width: 100%;
   max-width: 420px;
 }
 
-/* Product Aura */
+
+/* ============================================
+   PRODUCT AURA
+   ============================================ */
+
 .ps-product-aura {
   position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
   pointer-events: none;
 }
 
 .aura-ring {
   position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
   border-radius: 50%;
-  border: 1px solid rgba(184,148,75,0.15);
-  animation: auraExpand 6s ease-out infinite;
+
+  border:
+    1px solid
+    rgba(184, 148, 75, 0.15);
+
+  animation:
+    auraExpand 6s ease-out infinite;
 }
 
-.aura-ring-1 { width: 320px; height: 320px; animation-delay: 0s; }
-.aura-ring-2 { width: 400px; height: 400px; animation-delay: 2s; }
-.aura-ring-3 { width: 480px; height: 480px; animation-delay: 4s; }
+.aura-ring-1 {
+  width: 320px;
+  height: 320px;
+
+  animation-delay: 0s;
+}
+
+.aura-ring-2 {
+  width: 400px;
+  height: 400px;
+
+  animation-delay: 2s;
+}
+
+.aura-ring-3 {
+  width: 480px;
+  height: 480px;
+
+  animation-delay: 4s;
+}
 
 @keyframes auraExpand {
-  0% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.8); }
-  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.3); }
+  0% {
+    opacity: 0.6;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.8);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.3);
+  }
 }
+
 
 /* ============================================
-   Product Card - Image Overlay Style
+   PRODUCT CARD
    ============================================ */
+
 .ps-product-card {
   position: relative;
+
   width: 100%;
-  aspect-ratio: 3/4;
+
+  aspect-ratio: 3 / 4;
+
   border-radius: 32px;
+
   overflow: hidden;
-  box-shadow: 
-    0 30px 80px rgba(45,38,24,0.15),
-    0 0 0 1px rgba(255,255,255,0.3);
-  transition: transform 0.3s var(--ease-out-expo);
+
+  box-shadow:
+    0 30px 80px rgba(45, 38, 24, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.3);
+
+  transition:
+    transform 0.3s var(--ease-out-expo);
 }
 
-/* Full Background Image */
+
+/* ============================================
+   PRODUCT IMAGE
+   ============================================ */
+
 .ps-card-bg-image {
   position: absolute;
+
   inset: 0;
+
   z-index: 0;
 }
 
 .ps-card-bg-img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   object-position: center;
 }
 
-/* Gradient Overlays */
+
+/* ============================================
+   PRODUCT OVERLAYS
+   ============================================ */
+
 .ps-card-overlay {
   position: absolute;
+
   left: 0;
   right: 0;
+
   z-index: 1;
 }
 
 .ps-overlay-top {
   top: 0;
+
   height: 30%;
-  background: linear-gradient(180deg, rgba(45,38,24,0.4) 0%, transparent 100%);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(45, 38, 24, 0.4) 0%,
+      transparent 100%
+    );
 }
 
 .ps-overlay-bottom {
   bottom: 0;
+
   height: 50%;
-  background: linear-gradient(0deg, rgba(45,38,24,0.75) 0%, rgba(45,38,24,0.3) 60%, transparent 100%);
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(45, 38, 24, 0.75) 0%,
+      rgba(45, 38, 24, 0.3) 60%,
+      transparent 100%
+    );
 }
 
 .ps-overlay-center {
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 40%, rgba(45,38,24,0.2) 100%);
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 40%,
+      rgba(45, 38, 24, 0.2) 100%
+    );
 }
 
-/* Content Overlay */
+
+/* ============================================
+   PRODUCT CARD CONTENT
+   ============================================ */
+
 .ps-card-content {
   position: absolute;
+
   inset: 0;
+
   z-index: 2;
+
   display: flex;
+
   flex-direction: column;
+
   justify-content: space-between;
+
   padding: 28px;
 }
 
-/* Top Badge */
 .ps-card-top {
   display: flex;
+
   justify-content: center;
 }
 
 .ps-card-badge {
   padding: 8px 18px;
-  background: rgba(255,255,255,0.2);
+
+  background:
+    rgba(255, 255, 255, 0.2);
+
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255,255,255,0.3);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.3);
+
   border-radius: 100px;
+
   font-size: 0.72rem;
+
   font-weight: 600;
+
   color: white;
+
   letter-spacing: 0.08em;
+
   text-transform: uppercase;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+
+  text-shadow:
+    0 1px 3px
+    rgba(0, 0, 0, 0.2);
 }
 
-/* Center Product Info */
 .ps-card-center {
   text-align: center;
 }
 
 .ps-card-brand {
   font-family: var(--font-display);
+
   font-size: 2.5rem;
+
   font-weight: 700;
+
   color: white;
+
   line-height: 1;
-  text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+
+  text-shadow:
+    0 3px 15px
+    rgba(0, 0, 0, 0.3);
+
   letter-spacing: 0.02em;
 }
 
 .ps-card-name {
   font-size: 0.8rem;
+
   font-weight: 500;
-  color: rgba(255,255,255,0.85);
+
+  color:
+    rgba(255, 255, 255, 0.85);
+
   text-transform: uppercase;
+
   letter-spacing: 0.2em;
+
   margin-top: 6px;
-  text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+
+  text-shadow:
+    0 1px 5px
+    rgba(0, 0, 0, 0.3);
 }
 
 .ps-card-divider {
   width: 50px;
   height: 2px;
+
   background: var(--gold-300);
+
   margin: 14px auto;
+
   border-radius: 1px;
 }
 
 .ps-card-tagline {
   font-size: 0.72rem;
-  color: rgba(255,255,255,0.7);
+
+  color:
+    rgba(255, 255, 255, 0.7);
+
   letter-spacing: 0.06em;
 }
 
-/* Bottom Stats */
 .ps-card-bottom {
   display: flex;
+
   flex-direction: column;
+
   gap: 14px;
 }
 
 .ps-card-stats {
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   gap: 0;
+
   padding: 14px 20px;
-  background: rgba(255,255,255,0.12);
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255,255,255,0.2);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.2);
+
   border-radius: 16px;
 }
 
 .ps-card-stat {
   flex: 1;
+
   text-align: center;
+
   display: flex;
+
   flex-direction: column;
+
   gap: 2px;
 }
 
 .ps-stat-value {
   font-family: var(--font-display);
+
   font-size: 1.3rem;
+
   font-weight: 700;
+
   color: white;
+
   line-height: 1;
 }
 
 .ps-stat-label {
   font-size: 0.62rem;
-  color: rgba(255,255,255,0.6);
+
+  color:
+    rgba(255, 255, 255, 0.6);
+
   text-transform: uppercase;
+
   letter-spacing: 0.05em;
 }
 
 .ps-card-stat-divider {
   width: 1px;
   height: 28px;
-  background: rgba(255,255,255,0.2);
+
+  background:
+    rgba(255, 255, 255, 0.2);
 }
 
 .ps-card-quality {
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   gap: 8px;
+
   padding: 10px 16px;
-  background: rgba(255,255,255,0.1);
+
+  background:
+    rgba(255, 255, 255, 0.1);
+
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.15);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+
   border-radius: 100px;
+
   color: white;
+
   font-size: 0.72rem;
+
   font-weight: 500;
+
   width: fit-content;
+
   margin: 0 auto;
 }
 
-/* Card Reflection */
+
+/* ============================================
+   REFLECTION
+   ============================================ */
+
 .ps-card-reflection {
   position: absolute;
+
   inset: 0;
+
   z-index: 3;
+
   pointer-events: none;
-  background: linear-gradient(
-    135deg,
-    transparent 30%,
-    rgba(255,255,255,0.08) 50%,
-    transparent 70%
-  );
-  animation: reflectionMove 8s ease-in-out infinite;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.08) 50%,
+      transparent 70%
+    );
+
+  animation:
+    reflectionMove 8s ease-in-out infinite;
 }
 
 @keyframes reflectionMove {
-  0%, 100% { transform: translate(-5%, -5%); }
-  50% { transform: translate(5%, 5%); }
+  0%,
+  100% {
+    transform:
+      translate(-5%, -5%);
+  }
+
+  50% {
+    transform:
+      translate(5%, 5%);
+  }
 }
+
 
 /* ============================================
-   Ingredient Cards
+   INGREDIENT CARDS
    ============================================ */
+
 .ps-ingredient-card {
   position: absolute;
+
   z-index: 5;
+
   display: flex;
+
   align-items: center;
+
   gap: 10px;
+
   padding: 10px 16px;
-  background: rgba(255,255,255,0.8);
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.9);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.9);
+
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: transform 0.3s var(--ease-out-expo);
-  animation: cardFloat 6s ease-in-out infinite;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.1);
+
+  transition:
+    transform 0.3s var(--ease-out-expo);
+
+  animation:
+    cardFloat 6s ease-in-out infinite;
 }
 
-.ps-ing-top { top: -20px; right: -30px; }
-.ps-ing-bottom { bottom: 40px; left: -35px; animation-delay: -3s; }
+.ps-ing-top {
+  top: -20px;
+  right: -30px;
+}
+
+.ps-ing-bottom {
+  bottom: 40px;
+  left: -35px;
+
+  animation-delay: -3s;
+}
 
 @keyframes cardFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .ingredient-image {
-  width: 40px; height: 40px;
+  width: 40px;
+  height: 40px;
+
   border-radius: 10px;
+
   overflow: hidden;
+
   flex-shrink: 0;
 }
 
 .ingredient-image img {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
+
   object-fit: cover;
 }
 
 .ingredient-info {
   display: flex;
+
   flex-direction: column;
 }
 
 .ingredient-label {
   font-weight: 700;
+
   font-size: 0.9rem;
+
   color: var(--text-primary);
+
   line-height: 1;
 }
 
 .ingredient-text {
   font-size: 0.7rem;
+
   color: var(--text-muted);
 }
 
+
 /* ============================================
-   Content Column
+   CONTENT COLUMN
    ============================================ */
+
 .ps-content-column {
   display: flex;
+
   flex-direction: column;
+
   gap: 28px;
 }
 
-/* Description Card */
+
+/* ============================================
+   DESCRIPTION CARD
+   ============================================ */
+
 .ps-description-card {
   position: relative;
-  background: rgba(255,255,255,0.5);
+
+  background:
+    rgba(255, 255, 255, 0.5);
+
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255,255,255,0.7);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.7);
+
   border-radius: 24px;
+
   padding: 28px;
-  transition: all 0.4s var(--ease-out-expo);
+
+  transition:
+    all 0.4s var(--ease-out-expo);
 }
 
 .ps-description-card:hover {
-  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
-  border-color: rgba(184,168,142,0.2);
+  box-shadow:
+    0 15px 40px
+    rgba(0, 0, 0, 0.06);
+
+  border-color:
+    rgba(184, 168, 142, 0.2);
 }
 
 .ps-desc-icon {
-  width: 48px; height: 48px;
+  width: 48px;
+  height: 48px;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
-  background: rgba(154,184,130,0.1);
+
+  background:
+    rgba(154, 184, 130, 0.1);
+
   border-radius: 14px;
+
   color: var(--olive-600);
+
   margin-bottom: 16px;
 }
 
 .ps-description {
   font-size: 1rem;
+
   line-height: 1.8;
+
   color: var(--text-secondary);
+
   margin-bottom: 16px;
 }
 
 .ps-desc-decoration {
   display: flex;
+
   gap: 6px;
 }
 
 .decoration-dot {
-  width: 4px; height: 4px;
+  width: 4px;
+  height: 4px;
+
   border-radius: 50%;
+
   background: var(--gold-400);
+
   opacity: 0.4;
 }
 
-.decoration-dot:nth-child(2) { opacity: 0.6; width: 6px; height: 6px; }
+.decoration-dot:nth-child(2) {
+  opacity: 0.6;
 
-/* Features Grid */
+  width: 6px;
+  height: 6px;
+}
+
+
+/* ============================================
+   FEATURES GRID
+   ============================================ */
+
 .ps-features-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
   gap: 14px;
 }
+
+
+/* ============================================
+   FEATURE CARD
+   FIXED:
+   - content always visible
+   - SVG left center
+   - no hover required
+   ============================================ */
 
 .ps-feature-card {
   position: relative;
+
   display: flex;
-  align-items: flex-start;
+
+  /*
+    IMPORTANT:
+    SVG and complete text block are centered
+    vertically with each other.
+  */
+  align-items: center;
+
   gap: 14px;
-  padding: 20px;
-  background: rgba(255,255,255,0.4);
+
+  /*
+    Same height for all four cards.
+  */
+  min-height: 112px;
+
+  padding: 18px 20px;
+
+  background:
+    rgba(255, 255, 255, 0.55);
+
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.6);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.72);
+
   border-radius: 18px;
+
   cursor: default;
+
   overflow: hidden;
-  transition: all 0.5s var(--ease-out-expo);
+
+  transition:
+    opacity 0.5s var(--ease-out-expo),
+    transform 0.5s var(--ease-out-expo);
+
   opacity: 0;
-  transform: translateY(30px);
+
+  transform:
+    translateY(30px);
 }
 
-.ps-feature-card.visible { opacity: 1; transform: translateY(0); }
+.ps-feature-card.visible {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/*
+  NO CARD HOVER MOVEMENT.
+
+  Client wants the information permanently
+  visible instead of appearing through hover.
+*/
 
 .ps-feature-card:hover {
-  background: rgba(255,255,255,0.7);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+  background:
+    rgba(255, 255, 255, 0.55);
+
+  transform:
+    translateY(0);
+
+  box-shadow: none;
 }
 
-.ps-feature-icon-wrapper { position: relative; flex-shrink: 0; }
 
-.ps-feature-icon-circle {
-  width: 44px; height: 44px;
+/* ============================================
+   FEATURE SVG
+   LEFT SIDE + VERTICAL CENTER
+   ============================================ */
+
+.ps-feature-icon-wrapper {
+  position: relative;
+
+  /*
+    Prevent icon from shrinking.
+  */
+  flex: 0 0 44px;
+
+  width: 44px;
+  height: 44px;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
-  background: rgba(154,184,130,0.08);
-  border: 1px solid rgba(154,184,130,0.15);
-  border-radius: 13px;
-  color: var(--olive-600);
-  transition: all 0.5s var(--ease-out-expo);
+
+  /*
+    Keep SVG at left side.
+  */
+  align-self: center;
 }
 
-.ps-feature-icon-wrapper.active .ps-feature-icon-circle {
-  background: var(--olive-50);
-  border-color: var(--olive-400);
-  transform: scale(1.05);
+.ps-feature-icon-circle {
+  position: relative;
+
+  z-index: 2;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(154, 184, 130, 0.08);
+
+  border:
+    1px solid
+    rgba(154, 184, 130, 0.15);
+
+  border-radius: 13px;
+
+  color: var(--olive-600);
+
+  /*
+    Remove hover animation from icon.
+  */
+  transition: none;
 }
+
+.ps-feature-icon-circle svg {
+  display: block;
+
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+}
+
+
+/*
+  Remove active/hover icon difference.
+*/
+
+.ps-feature-icon-wrapper.active
+.ps-feature-icon-circle {
+  background:
+    rgba(154, 184, 130, 0.08);
+
+  border-color:
+    rgba(154, 184, 130, 0.15);
+
+  transform: none;
+}
+
+
+/*
+  Glow disabled because client does not
+  want hover-dependent appearance.
+*/
 
 .ps-feature-icon-glow {
-  position: absolute;
-  inset: -4px;
-  border-radius: 16px;
-  background: rgba(154,184,130,0.1);
-  opacity: 0;
-  transition: opacity 0.5s;
+  display: none;
 }
 
-.ps-feature-icon-wrapper.active .ps-feature-icon-glow { opacity: 1; }
+.ps-feature-icon-wrapper.active
+.ps-feature-icon-glow {
+  display: none;
+}
 
-.ps-feature-content { flex: 1; min-width: 0; }
+
+/* ============================================
+   FEATURE CONTENT
+   ALWAYS VISIBLE
+   ============================================ */
+
+.ps-feature-content {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-self: center;
+}
 
 .ps-feature-title {
   font-family: var(--font-display);
+
   font-size: 1.05rem;
+
   font-weight: 600;
+
   color: var(--text-primary);
-  margin-bottom: 4px;
+
+  /*
+    Description now permanently exists below,
+    so keep a small natural gap.
+  */
+  margin: 0 0 6px;
+
   line-height: 1.3;
 }
 
-.ps-feature-desc {
-  font-size: 0.8rem;
-  line-height: 1.5;
-  color: var(--text-muted);
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.5s var(--ease-out-expo);
-}
-
-.ps-feature-desc.show { max-height: 40px; opacity: 1; margin-top: 6px; }
-
-.ps-feature-check {
-  opacity: 0;
-  transform: scale(0.5);
-  transition: all 0.5s var(--ease-out-back);
-  color: var(--olive-500);
-  flex-shrink: 0;
-  margin-top: 12px;
-}
-
-.ps-feature-check.active { opacity: 1; transform: scale(1); }
-
-.ps-feature-border {
-  position: absolute;
-  bottom: 0; left: 20px; right: 20px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-300), transparent);
-  transform: scaleX(0);
-  transition: transform 0.5s var(--ease-out-expo);
-}
-
-.ps-feature-card:hover .ps-feature-border { transform: scaleX(1); }
 
 /* ============================================
-   CTA Section
+   DESCRIPTION PERMANENTLY VISIBLE
    ============================================ */
+
+.ps-feature-desc {
+  /*
+    These override the JSX hover class logic.
+    Description is visible whether .show exists
+    or not.
+  */
+
+  font-size: 0.8rem;
+
+  line-height: 1.5;
+
+  color: var(--text-muted);
+
+  max-height: none;
+
+  opacity: 1;
+
+  overflow: visible;
+
+  margin: 0;
+
+  transition: none;
+}
+
+
+/*
+  JSX still adds .show on hover.
+  Keep exactly the same appearance so
+  hovering changes nothing.
+*/
+
+.ps-feature-desc.show {
+  max-height: none;
+
+  opacity: 1;
+
+  margin: 0;
+}
+
+
+/* ============================================
+   CHECK ICON
+   DISABLED
+   ============================================ */
+
+/*
+  JSX can stay untouched.
+
+  This prevents the right-side check from
+  appearing when hovering.
+*/
+
+.ps-feature-check,
+.ps-feature-check.active {
+  display: none;
+}
+
+
+/* ============================================
+   FEATURE BORDER
+   DISABLED
+   ============================================ */
+
+.ps-feature-border {
+  display: none;
+}
+
+.ps-feature-card:hover
+.ps-feature-border {
+  transform: none;
+}
+
+
+/* ============================================
+   CTA
+   ============================================ */
+
 .ps-cta-wrapper {
   display: flex;
+
   align-items: center;
+
   gap: 24px;
 }
 
 .ps-cta-button {
   position: relative;
+
   display: inline-flex;
+
   align-items: center;
+
   gap: 12px;
+
   padding: 18px 36px;
-  background: linear-gradient(135deg, var(--olive-600), var(--olive-500));
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--olive-600),
+      var(--olive-500)
+    );
+
   color: white;
+
   border: none;
+
   border-radius: 14px;
+
   font-family: var(--font-body);
+
   font-size: 1rem;
+
   font-weight: 500;
+
   cursor: pointer;
+
   overflow: hidden;
-  transition: all 0.4s var(--ease-out-expo);
-  box-shadow: 0 4px 24px rgba(74,99,48,0.25);
+
+  transition:
+    all 0.4s var(--ease-out-expo);
+
+  box-shadow:
+    0 4px 24px
+    rgba(74, 99, 48, 0.25);
+
   white-space: nowrap;
 }
 
 .ps-cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 35px rgba(74,99,48,0.35);
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 8px 35px
+    rgba(74, 99, 48, 0.35);
 }
 
 .ps-cta-icon {
   display: flex;
+
   align-items: center;
-  transition: transform 0.3s var(--ease-out-expo);
+
+  transition:
+    transform 0.3s
+    var(--ease-out-expo);
 }
 
-.ps-cta-button:hover .ps-cta-icon { transform: translateX(4px); }
+.ps-cta-button:hover
+.ps-cta-icon {
+  transform:
+    translateX(4px);
+}
 
 .ps-cta-shine {
   position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+
   transition: left 0.7s;
 }
 
-.ps-cta-button:hover .ps-cta-shine { left: 100%; }
+.ps-cta-button:hover
+.ps-cta-shine {
+  left: 100%;
+}
 
-.ps-cta-trust { display: flex; align-items: center; gap: 10px; }
+.ps-cta-trust {
+  display: flex;
 
-.trust-avatars { display: flex; }
+  align-items: center;
+
+  gap: 10px;
+}
+
+.trust-avatars {
+  display: flex;
+}
 
 .trust-avatar {
-  width: 28px; height: 28px;
+  width: 28px;
+  height: 28px;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
-  background: var(--olive-100);
-  border: 2px solid white;
+
+  background:
+    var(--olive-100);
+
+  border:
+    2px solid white;
+
   border-radius: 50%;
+
   font-size: 0.6rem;
+
   color: var(--olive-600);
+
   margin-left: -8px;
 }
 
-.trust-avatar:first-child { margin-left: 0; }
+.trust-avatar:first-child {
+  margin-left: 0;
+}
 
 .trust-text {
   font-size: 0.8rem;
+
   color: var(--text-muted);
+
   white-space: nowrap;
 }
 
+
 /* ============================================
-   Responsive
+   TABLET
    ============================================ */
+
 @media (max-width: 1024px) {
-  .product-showcase { padding: 100px 0; }
-  .product-showcase-container { padding: 0 24px; }
-  .ps-main-grid { grid-template-columns: 1fr; gap: 50px; }
-  .ps-visual-column { order: -1; }
-  .ps-product-wrapper { max-width: 380px; margin: 0 auto; }
-  .ps-ingredient-card { display: none; }
-  .ps-features-grid { grid-template-columns: repeat(2, 1fr); }
-  .ps-cta-wrapper { flex-direction: column; align-items: stretch; text-align: center; }
-  .ps-cta-trust { justify-content: center; }
+
+  .product-showcase {
+    padding: 100px 0;
+  }
+
+  .product-showcase-container {
+    padding: 0 24px;
+  }
+
+  .ps-main-grid {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .ps-visual-column {
+    order: -1;
+  }
+
+  .ps-product-wrapper {
+    max-width: 380px;
+
+    margin: 0 auto;
+  }
+
+  .ps-ingredient-card {
+    display: none;
+  }
+
+  .ps-features-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .ps-feature-card {
+    min-height: 112px;
+  }
+
+  .ps-cta-wrapper {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    text-align: center;
+  }
+
+  .ps-cta-trust {
+    justify-content: center;
+  }
 }
+
+
+/* ============================================
+   MOBILE
+   ============================================ */
 
 @media (max-width: 640px) {
-  .product-showcase { padding: 70px 0; }
-  .product-showcase-container { padding: 0 16px; }
-  .ps-title { font-size: 2rem; }
-  .ps-features-grid { grid-template-columns: 1fr; gap: 10px; }
-  .ps-feature-card { padding: 16px; }
-  .ps-product-card { aspect-ratio: 4/5; }
-  .ps-card-brand { font-size: 2rem; }
-  .ps-card-content { padding: 20px; }
-  .ps-cta-button { width: 100%; justify-content: center; }
+
+  .product-showcase {
+    padding: 70px 0;
+  }
+
+  .product-showcase-container {
+    padding: 0 16px;
+  }
+
+  .ps-title {
+    font-size: 2rem;
+  }
+
+  .ps-features-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .ps-feature-card {
+    min-height: 100px;
+
+    padding: 16px;
+
+    gap: 14px;
+
+    /*
+      Icon still left + center on mobile.
+    */
+    align-items: center;
+  }
+
+  .ps-feature-icon-wrapper {
+    flex-basis: 44px;
+
+    width: 44px;
+    height: 44px;
+
+    align-self: center;
+  }
+
+  .ps-feature-content {
+    align-self: center;
+  }
+
+  .ps-feature-title {
+    margin-bottom: 5px;
+  }
+
+  .ps-feature-desc {
+    max-height: none;
+
+    opacity: 1;
+
+    overflow: visible;
+  }
+
+  .ps-product-card {
+    aspect-ratio: 4 / 5;
+  }
+
+  .ps-card-brand {
+    font-size: 2rem;
+  }
+
+  .ps-card-content {
+    padding: 20px;
+  }
+
+  .ps-cta-button {
+    width: 100%;
+
+    justify-content: center;
+  }
 }
 
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
 @media (prefers-reduced-motion: reduce) {
-  .ps-gradient-orb, .ps-float-item, .aura-ring, .ps-card-reflection, .ps-ingredient-card {
+
+  .ps-gradient-orb,
+  .ps-float-item,
+  .aura-ring,
+  .ps-card-reflection,
+  .ps-ingredient-card {
     animation: none !important;
   }
 }
