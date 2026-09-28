@@ -6,7 +6,7 @@ import {
   Users, 
   Sparkles,
   Leaf,
-  ArrowRight,
+  ArrowUp,
   Quote,
   Shield,
   Star,
@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import './FounderStory.css'
 import founder from "../../assets/f2.png";
+
 
 // ============================================
 // REPLACE THESE WITH YOUR ACTUAL IMAGE URLS
@@ -200,7 +201,7 @@ const FounderStory = () => {
               {/* CTA */}
               <button className="fd-cta">
                 <span>Read Our Full Story</span>
-                <ArrowRight size={16} />
+                <ArrowUp size={16} />
               </button>
             </div>
           </div>

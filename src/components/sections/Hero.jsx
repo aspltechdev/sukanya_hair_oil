@@ -1704,7 +1704,7 @@ const Hero = () => {
                   <div className="pill-orbit pill-orbit-4">
                     <div className="pill">
                       <Star size={12} />
-                      <span>Ayurvedic</span>
+                      <span>Organic</span>
                     </div>
                   </div>
 

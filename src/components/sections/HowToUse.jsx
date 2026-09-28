@@ -4,7 +4,7 @@ import {
   Droplets, 
   Moon, 
   ShowerHead, 
-  ArrowRight, 
+  ArrowUp, 
   Sparkles,
   Clock,
   Play,
@@ -362,7 +362,7 @@ const HowToUse = () => {
               {/* CTA */}
               <button className="htu-cta-button">
                 <span>View Full Guide</span>
-                <ArrowRight size={16} />
+                <ArrowUp size={16} />
                 <div className="cta-shine" />
               </button>
             </div>
@@ -400,7 +400,7 @@ const HowToUse = () => {
               </div>
               <div className="benefit-text">
                 <span className="benefit-label">Results</span>
-                <span className="benefit-value">4-6 Weeks</span>
+                <span className="benefit-value">Experience Difference with consistent Care</span>
               </div>
             </div>
           </div>

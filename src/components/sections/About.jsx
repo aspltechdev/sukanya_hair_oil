@@ -510,10 +510,10 @@ const About = () => {
                     <span className="stat-number">
 
                       <span className="stat-counter">
-                        5
+                        
                       </span>
 
-                      K+
+                      ⭐⭐⭐⭐⭐
 
                     </span>
 

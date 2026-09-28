@@ -15,16 +15,31 @@ import {
 } from 'lucide-react'
 import './Testimonials.css'
 
+import cus1 from "../../assets/cus1.png";
+import cus2 from "../../assets/cus2.png";
+import cus3 from "../../assets/cus3.png";
+import cus4 from "../../assets/cus4.png";
+import cus5 from "../../assets/cus5.png";
+import cus6 from "../../assets/cus6.png";
+import cus7 from "../../assets/cus7.png";
+import cus8 from "../../assets/cus8.png";
+import cus9 from "../../assets/cus9.png";
+
+
+
 // ============================================
 // REPLACE THESE WITH YOUR ACTUAL IMAGE URLS
 // ============================================
 const IMAGES = {
-  avatar1: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80',
-  avatar2: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80',
-  avatar3: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80',
-  avatar4: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80',
-  avatar5: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80',
-  avatar6: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&q=80',
+  avatar1: cus1,
+  avatar2: cus2,
+  avatar3: cus3,
+  avatar4: cus4,
+  avatar5: cus5,
+  avatar6: cus6,
+  avatar7: cus7,
+  avatar8: cus8,
+  avatar9: cus9,
 }
 
 const Testimonials = () => {
@@ -37,58 +52,85 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      text: "My hair feels stronger and looks shinier than ever. I've noticed a significant reduction in hair fall within just a month. The natural ingredients truly make a difference.",
-      name: "Priya Sharma",
-      location: "Mumbai",
+      text: "The oil feels very natural and nourishing. My hair feels softer and healthier after regular use.",
+      name: "Nirmala",
+      location: "Gulbarga",
       rating: 5,
-      usage: "3 months",
+      usage: "1 Year",
       avatar: IMAGES.avatar1,
-      highlight: "Reduced hair fall in 1 month"
+      highlight: "Reduced hair fall after 2 times"
     },
     {
-      text: "After trying countless products, I finally found something that works. My hair is thicker, healthier, and I can see new growth. Highly recommend it to everyone!",
-      name: "Rajesh Kumar",
-      location: "Delhi",
+      text: "I really liked the traditional herbal fragrance and lightweight feel. It has become part of my weekly hair-care routine.",
+      name: "Savitri",
+      location: "Herur, Kalaburgi",
       rating: 5,
       usage: "2 months",
       avatar: IMAGES.avatar2,
       highlight: "Visible new hair growth"
     },
     {
-      text: "The traditional recipe shows in the quality. My entire family now uses Sukanya Hair Oil. It's become our little secret for beautiful, healthy hair. Worth every rupee!",
-      name: "Sneha Patel",
-      location: "Bangalore",
+      text: "Sukanya Hair Oil feels like a traditional family hair-care remedy with a fresh, natural touch.",
+      name: "Shashikala Mangalesh",
+      location: "Hubali Dharwad",
       rating: 5,
       usage: "4 months",
       avatar: IMAGES.avatar3,
       highlight: "Best natural hair oil"
     },
     {
-      text: "I was skeptical at first, but the results speak for themselves. My dandruff is gone, hair is smoother, and I get compliments everywhere I go. This oil is magical!",
-      name: "Ankit Verma",
-      location: "Jaipur",
+      text: "After using it regularly, my hair feels smoother, softer and more manageable.",
+      name: "Anupama Dev Prabhu",
+      location: "Bangalore",
       rating: 5,
       usage: "6 weeks",
       avatar: IMAGES.avatar4,
       highlight: "Dandruff completely gone"
     },
     {
-      text: "Three generations of my family now use Sukanya Hair Oil. The traditional recipe truly shows in the quality. My grandmother swears by it and now I do too!",
-      name: "Meera Iyer",
-      location: "Chennai",
+      text: "I love the natural ingredients and the care that goes into every bottle. Definitely worth trying!",
+      name: "Ashwini  B K Patil",
+      location: "Lakmeshwara, Gadag",
       rating: 5,
       usage: "1 year",
       avatar: IMAGES.avatar5,
       highlight: "Family favorite for years"
     },
     {
-      text: "I've tried every hair oil on the market. Nothing compares to Sukanya. My hair has never been this thick and shiny. The cold-pressed oils make all the difference.",
-      name: "Deepak Reddy",
-      location: "Hyderabad",
+      text: "The oil feels gentle on my scalp and leaves my hair feeling nourished without being too heavy.",
+      name: "Anuradha",
+      location: "Hosapete",
       rating: 5,
       usage: "5 months",
       avatar: IMAGES.avatar6,
       highlight: "Thicker, shinier hair"
+    },
+    {
+      text: "A beautiful blend of traditional hair care and natural ingredients. I’m enjoying using it regularly.",
+      name: "Jyoti Pavan",
+      location: "Harihara,  Davanagere",
+      rating: 5,
+      usage: "5 months",
+      avatar: IMAGES.avatar7,
+      highlight: "Fuller hair, natural shine"
+    },
+    {
+      text: "Fresh, natural and easy to use—Sukanya Hair Oil is now part of my regular hair-care routine.",
+      name: "Vittala Siddannavar",
+      location: "Herur, Kalaburgi ulbarga",
+      rating: 5,
+      usage: "5 months",
+      avatar: IMAGES.avatar8,
+      highlight: "Less breakage, more strength"
+    },
+    {
+      text: "Light, natural, and easy to apply—Sukanya Hair Oil has become a simple part of my everyday hair-care routine.",
+      name: "Jyoti Pavan",
+      location: "Harihara, Davangere",
+      rating: 5,
+      usage: "5 months",
+      avatar: IMAGES.avatar9,
+      highlight: "Nourished roots, gorgeous hair"
     }
   ]
 
