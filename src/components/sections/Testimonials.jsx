@@ -24,8 +24,7 @@ import cus6 from "../../assets/cus6.png";
 import cus7 from "../../assets/cus7.png";
 import cus8 from "../../assets/cus8.png";
 import cus9 from "../../assets/cus9.png";
-
-
+import cus10 from "../../assets/cus10.jpeg";
 
 // ============================================
 // REPLACE THESE WITH YOUR ACTUAL IMAGE URLS
@@ -40,6 +39,7 @@ const IMAGES = {
   avatar7: cus7,
   avatar8: cus8,
   avatar9: cus9,
+  avatar10: cus10,
 }
 
 const Testimonials = () => {
@@ -51,6 +51,15 @@ const Testimonials = () => {
   const sliderRef = useRef(null)
 
   const testimonials = [
+    {
+      text: "I have been using this homemade hair oil for the past month and am very happy with the results. My hair feels healthier and better nourished, and the oil absorbs well without leaving a heavy residue. An unexpected benefit is that applying it to my scalp is relaxing, and I have been sleeping noticeably better on the nights I use it. The natural formulation and consistent quality make it a product I would happily continue using. I recommend it to anyone looking for a gentle, effective hair care option.",
+      name: "Harish",
+      location: "Andhra",
+      rating: 5,
+      usage: "5 months",
+      avatar: IMAGES.avatar10,
+      highlight: "Nourished roots, gorgeous hair"
+    },
     {
       text: "The oil feels very natural and nourishing. My hair feels softer and healthier after regular use.",
       name: "Nirmala",
